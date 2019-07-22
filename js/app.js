@@ -42,6 +42,6 @@ Icon.prototype.createCard = function(){
        document.body.appendChild(x); 
     }
 }
-createCard();
+// createCard();
 
 console.log(Icon.imageDatabase);
