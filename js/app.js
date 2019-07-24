@@ -1,47 +1,107 @@
 'use strict';
-//create a function to render randomized images within three table cells from an image array inside of a constructor function. 
-function addElement (element, image, parent){
-    var newElement = document.createElement(element);
-    var newIcon = document.createElement(image);
-    newElement.appendChild(newIcon);
-    parent.appendChild(newElement);
-    return newElement;
-}
+
+var imagesArray = [
+  './images/bag.jpg',
+  './images/banana.jpg',
+  './images/bathroom.jpg',
+  './images/boots.jpg',
+  './images/breakfast.jpg',
+  './images/bubblegum.jpg',
+  './images/chair.jpg',
+  './images/cthulhu.jpg',
+  './images/dog-duck.jpg',
+  './images/dragon.jpg',
+  './images/pen.jpg',
+  './images/pet-sweep.jpg',
+  './images/scissors.jpg',
+  './images/shark.jpg',
+  './images/sweep.png',
+  './images/tauntaun.jpg',
+  './images/unicorn.jpg',
+  './images/usb.gif',
+  './images/water-can.jpg',
+  './images/wine-glass.jpg',
+];
 
 
-var clicksAllowed = 10;
-var timesClicked = [];
-var timesDisplayed = [];
-
-function Icon(name, filepath) {
+function ImageAnalytics(name, filepath, displayed, clicked) {
   this.name = name;
   this.filepath = filepath;
   this.displayed = 0;
   this.clicked = 0;
-  Icon.imageDatabase.push(this);
+  ImageAnalytics.imagesArray.push(this); 
 }
 
-Icon.imageDatabase = [];
 
-new Icon('cuthulu', 'imgs/cuthulu.jpg', 0, 0);
-new Icon('R2D2 Bag', 'images/bag.jpg', 0, 0);
 
-// console.log(Icon[0]);
+var left = document.getElementById('img1');
+img1.addEventListener('click', getRandomImage);
 
-// function rendergame(){
-//     for (var i = 0; i < imageDatabase.length; i++){
+var center = document.getElementById('img2');
+img2.addEventListener('click', getRandomImage);
 
-//     }
-// }
+var right = document.getElementById('img3');
+img3.addEventListener('click', getRandomImage);
 
-Icon.prototype.createCard = function(){
-    for (var i = 0; i < iconDatabase.length; i++){
-        
-       var x = document.createElement('img'); 
-       x.setAttribute('src', Icon.filepath);
-       document.body.appendChild(x); 
-    }
+
+
+function addElement (element, text, parent){
+  var newElement = document.createElement(element);
+  var newText = document.createTextNode(text);
+  newElement.appendChild(newText);
+  parent.appendChild(newElement);
+  return newElement;
 }
-// createCard();
 
-console.log(Icon.imageDatabase);
+addElement('img', imagesArray, 'section');
+
+
+
+function getRandomNumber() {
+    return Math.floor(Math.random()*ImageAnalytics.imagesArray.length);
+}
+
+function getRandomImage() {
+  var randomArray = [];
+  
+  for (var i = 0; i < 3; i++) {
+  randomArray.push(ImageAnalytics.imagesArray[getRandomNumber()].filepath);
+  }
+
+  console.log(getRandomNumber());
+  left.src = randomArray[0];
+  center.src = randomArray[1];
+  right.src = randomArray[2];  
+}
+
+function renderImage1(){
+  var x = document.createElement('<img>');
+  x.setAttribute('src', imagesArray[i]);
+  document.body.appendChild(x); 
+}
+
+
+//Stop the randomImage generator from duplicating two of the sames images in one set
+function nonDuplication(){
+  img1 = X;
+  img2 = Y;
+  img3 = Z;
+  if (X=Y){
+  getRandomImage();
+  }
+  if (Y=Z){
+  getRandomImage();
+  }
+  if (Z=X){
+  getRandomImage();
+  }
+}
+
+//keep track of, and then end the click game at 25 selections
+while ('click' < 25) {
+ for (var i = 0; i <= 25; i++);
+  push(ImageAnalytics.imagesArray);
+  if('click' > 25);
+console.log(imagesArray);
+};
+getRandomImage();
