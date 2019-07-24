@@ -34,6 +34,18 @@ function ImageAnalytics(name, filepath, displayed, clicked) {
 
 
 
+
+
+// function addElement (element, text, parent){
+//   var newElement = document.createElement(element);
+//   var newText = document.createTextNode(text);
+//   newElement.appendChild(newText);
+//   parent.appendChild(newElement);
+//   return newElement;
+// }
+
+// addElement('img', imagesArray, 'section');
+
 var left = document.getElementById('img1');
 img1.addEventListener('click', getRandomImage);
 
@@ -44,40 +56,28 @@ var right = document.getElementById('img3');
 img3.addEventListener('click', getRandomImage);
 
 
-
-function addElement (element, text, parent){
-  var newElement = document.createElement(element);
-  var newText = document.createTextNode(text);
-  newElement.appendChild(newText);
-  parent.appendChild(newElement);
-  return newElement;
-}
-
-addElement('img', imagesArray, 'section');
-
-
-
-function getRandomNumber() {
-    return Math.floor(Math.random()*ImageAnalytics.imagesArray.length);
-}
-
-function getRandomImage() {
+function getRandomImage(){
   var randomArray = [];
   
   for (var i = 0; i < 3; i++) {
   randomArray.push(ImageAnalytics.imagesArray[getRandomNumber()].filepath);
   }
-
+}
   console.log(getRandomNumber());
   left.src = randomArray[0];
   center.src = randomArray[1];
   right.src = randomArray[2];  
+
+
+function getRandomNumber(){
+  Math.floor(Math.random()*ImageAnalytics.imagesArray);
+
 }
 
+  
+
 function renderImage1(){
-  var x = document.createElement('<img>');
-  x.setAttribute('src', imagesArray[i]);
-  document.body.appendChild(x); 
+  document.getElementById('img').append = imagesArray[0];
 }
 
 
@@ -98,10 +98,4 @@ function nonDuplication(){
 }
 
 //keep track of, and then end the click game at 25 selections
-while ('click' < 25) {
- for (var i = 0; i <= 25; i++);
-  push(ImageAnalytics.imagesArray);
-  if('click' > 25);
-console.log(imagesArray);
-};
-getRandomImage();
+
