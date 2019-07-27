@@ -36,15 +36,19 @@ function ImageAnalytics(name, filepath, displayed, clicked) {
 
 
 
-// function addElement (element, text, parent){
-//   var newElement = document.createElement(element);
-//   var newText = document.createTextNode(text);
-//   newElement.appendChild(newText);
-//   parent.appendChild(newElement);
-//   return newElement;
-// }
+function addElement (element, text, parent){
+  var newElement = document.createElement(element);
+  var newText = document.createTextNode(text);
+  newElement.appendChild(newText);
+  parent.appendChild(newElement);
+  return newElement;
+}
 
 // addElement('img', imagesArray, 'section');
+function addGame(){
+var img1 = document.getElementById('busGame');
+  busGame.appendChild(addElement('img', ImageAnalytics[i]), 'div');
+}
 
 var left = document.getElementById('img1');
 img1.addEventListener('click', getRandomImage);

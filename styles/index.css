@@ -1,0 +1,20 @@
+html {
+    background-color: rgb(10, 66, 112);
+    color: rgb(199, 171, 180);
+}
+h3 {
+    border: 5px dotted whitesmoke;
+    position: relative;
+    top: 150px;
+}
+img {
+    border: 5px dotted whitesmoke;
+    width: 200px;
+    height: auto;
+    /* display: inline-block; */
+}
+
+.game{
+    width: 960px;
+    height: auto;
+}
